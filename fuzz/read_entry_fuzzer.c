@@ -2,6 +2,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 int LLVMFuzzerTestOneInput(const uint8_t *data, const size_t size)
 {
     void *buf = NULL;
@@ -36,3 +39,6 @@ end:
     free(buf);
     return 0;
 }
+#ifdef __cplusplus
+}
+#endif
