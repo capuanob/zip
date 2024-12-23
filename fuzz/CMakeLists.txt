@@ -9,6 +9,9 @@ add_definitions(-DNDEBUG)  # Do not want assertions
 if (DEFINED ENV{CFLAGS})
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} $ENV{CFLAGS}")
 endif ()
+if (DEFINED ENV{CXXFLAGS})
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} $ENV{CXXFLAGS}")
+endif ()
 
 add_executable(read_entry_fuzzer read_entry_fuzzer.c)
 target_link_libraries(read_entry_fuzzer PRIVATE ${PROJECT_NAME} $ENV{LIB_FUZZING_ENGINE})

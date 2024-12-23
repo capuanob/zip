@@ -5,9 +5,6 @@ cmake -S . -B build \
         -DCMAKE_C_COMPILER_WORKS=1 \
         -DCMAKE_DISABLE_TESTING=ON \
         -DZIP_BUILD_FUZZ=ON \
-        -DCMAKE_C_COMPILER="$CC" \
-        -DCMAKE_C_FLAGS="$CFLAGS" \
-        -DCMAKE_EXE_LINKER_FLAGS="$LIB_FUZZING_ENGINE" \
     && cmake --build build --target install
 
 # Prepare corpora
