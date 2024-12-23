@@ -3,6 +3,7 @@ cd $SRC/zip
 mkdir -p build
 cmake -S . -B build \
         -DCMAKE_C_COMPILER_WORKS=1 \
+        -DCMAKE_DISABLE_TESTING=ON \
         -DZIP_BUILD_FUZZ=ON \
         -DCMAKE_C_COMPILER="$CC" \
         -DCMAKE_C_FLAGS="$CFLAGS" \
